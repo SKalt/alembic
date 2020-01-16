@@ -854,6 +854,7 @@ class Script(revision.Revision):
 
     @classmethod
     def _list_py_dir(cls, scriptdir, path):
+        # TODO: match packages as well as modules
         if scriptdir.sourceless:
             # read files in version path, e.g. pyc or pyo files
             # in the immediate path

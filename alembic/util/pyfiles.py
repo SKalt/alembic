@@ -30,6 +30,9 @@ def template_to_file(template_file, dest, output_encoding, **kw):
             "template-oriented traceback." % fname
         )
     else:
+        dest_dir = os.path.dirname(dest)
+        if not os.path.exists(dest_dir):
+            os.makedirs(dest_dir, exist_ok=True)
         with open(dest, "wb") as f:
             f.write(output)
 
